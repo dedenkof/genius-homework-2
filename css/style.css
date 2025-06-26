@@ -63,7 +63,7 @@ body {
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  letter-spacing: 0;
+  letter-spacing: normal;
   color: var(--color-primary-dark);
 }
 
@@ -72,7 +72,7 @@ h1 {
   font-weight: bold;
   font-size: 64px;
   line-height: 100%;
-  letter-spacing: 0;
+  letter-spacing: normal;
 }
 
 h2 {
@@ -80,7 +80,7 @@ h2 {
   font-weight: bold;
   font-size: 32px;
   line-height: 100%;
-  letter-spacing: 0;
+  letter-spacing: normal;
 }
 
 h3 {
@@ -88,7 +88,7 @@ h3 {
   font-weight: 600;
   font-size: 22px;
   line-height: 100%;
-  letter-spacing: 0;
+  letter-spacing: normal;
 }
 
 h4 {
@@ -96,7 +96,7 @@ h4 {
   font-weight: 400;
   font-size: 22px;
   line-height: 38px;
-  letter-spacing: 0;
+  letter-spacing: normal;
 }
 
 h5 {
@@ -104,7 +104,7 @@ h5 {
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: 0;
+  letter-spacing: normal;
 }
 
 h6 {
@@ -112,14 +112,16 @@ h6 {
   font-weight: 400;
   font-size: 16px;
   line-height: 100%;
-  letter-spacing: 0;
+  letter-spacing: normal;
 }
 
 img {
+  position: relative;
   display: block;
   max-width: 100%;
   height: auto;
   object-fit: cover;
+  z-index: 2;
 }
 
 address {
@@ -146,7 +148,10 @@ button {
   font-weight: 600;
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: normal;
+  border-radius: 32px;
+  padding: 16px 32px;
+  width: 100%;
 }
 
 button:hover {
@@ -164,7 +169,7 @@ button:hover {
 .section {
   position: relative;
   width: 100%;
-  padding: 90px 0;
+  padding: 48px 0;
 }
 
 .text-brand {
@@ -180,10 +185,10 @@ button:hover {
   top: 0;
   left: 0;
   width: 100%;
-  height: 76px;
   background: var(--color-primary-light-transparent);
   z-index: 1;
-  padding-top: 20px;
+  padding: 32px 0;
+  height: 106px;
 }
 
 .header-container {
@@ -212,7 +217,7 @@ button:hover {
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: normal;
 }
 
 .header-menu .link.active {
@@ -221,7 +226,7 @@ button:hover {
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: normal;
 }
 
 link:hover {
@@ -231,6 +236,7 @@ link:hover {
 .header-logo {
   fill: var(--color-brand);
   width: 74px;
+  height: 42px;
 }
 
 .header-socials .socials-icon {
@@ -238,9 +244,9 @@ link:hover {
 }
 
 .hero-section {
-  padding: 126px 0;
   position: relative;
-  height: 630px;
+  padding: 125px 0 0;
+  height: 659px;
   background: url("../images/hero-bg.jpg") var(--color-primary-light);
   overflow: hidden;
   background-repeat: no-repeat;
@@ -263,13 +269,21 @@ link:hover {
   z-index: 3;
 }
 
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  max-width: 344px;
+}
+
 .hero-title {
   color: var(--color-primary-dark);
   font-family: Roboto;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: normal;
 }
 
 .hero-title > .text-brand {
@@ -277,24 +291,44 @@ link:hover {
   font-weight: 700;
   font-size: 140px;
   line-height: 114px;
-  letter-spacing: 0%;
+  letter-spacing: normal;
   text-transform: capitalize;
+  margin-top: 12px;
+  display: inline-block;
 }
 
 .hero-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  max-width: 220px;
+}
+
+.hero-text {
   color: var(--color-secondary-dark);
   font-family: Roboto;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  letter-spacing: 0%;
+  letter-spacing: normal;
+  text-align: center;
 }
 
 .about-section {
-  position: relative;
-  width: 100%;
-  padding: 90px 0;
+  padding: 90px 0 0;
   background: var(--color-primary-light);
+}
+
+.about-section > .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.about-text {
+  max-width: 709px;
 }
 
 .about-title {
@@ -303,11 +337,15 @@ link:hover {
   font-weight: 700;
   font-size: 64px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: normal;
 }
 
 .about-title > .text-brand {
   text-transform: capitalize;
+}
+
+.about-text {
+  max-width: 709px;
 }
 
 .about-desc {
@@ -316,13 +354,22 @@ link:hover {
   font-weight: 400;
   font-size: 22px;
   line-height: 38px;
-  letter-spacing: 0%;
+  letter-spacing: normal;
+  margin-top: 40px;
+}
+
+.bg-star {
+  position: absolute;
+  top: 115px;
+  right: 0px;
+  width: 1440px;
+  height: 624px;
+  background-image: url("../images/background-star.png");
+  background-repeat: no-repeat;
 }
 
 .wrap-section {
   position: relative;
-  z-index: 0;
-  overflow: hidden;
 }
 
 .wrap-bg {
@@ -331,16 +378,14 @@ link:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  background: url("../images/wave-star.svg");
+  background: url("../images/wave-star_bg.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
   background-position: center top;
-  pointer-events: none;
 }
 
 .advantages-section {
-  padding-top: 340px;
+  padding: 214px 0 48px;
 }
 
 .advantages-title {
@@ -349,8 +394,37 @@ link:hover {
   font-weight: 700;
   font-size: 64px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: normal;
   text-align: center;
+}
+
+.advantages-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+  margin-top: 48px;
+}
+
+.advantages-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 181px;
+  padding: 24px 32px;
+  background: var(--color-primary-light);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 10px 15px 20px 5px rgba(168, 198, 245, 0.38);
+  gap: 8px;
+  text-align: center;
+  max-width: 316px;
+}
+
+.advantages-icon {
+  width: 48px;
+  margin: 0 auto;
 }
 
 .card-title {
@@ -359,14 +433,12 @@ link:hover {
   font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  letter-spacing: 0%;
+  letter-spacing: normal;
   text-align: center;
 }
 
-.procedures-section {
-  position: relative;
-  width: 100%;
-  padding: 90px 0;
+.procedures-section > .container {
+  overflow: hidden;
 }
 
 .procedures-title {
@@ -375,35 +447,142 @@ link:hover {
   font-weight: 700;
   font-size: 64px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: normal;
   text-align: center;
+}
+
+.procedures-slider {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.carousel-container {
+  overflow: hidden;
 }
 
 .carousel-card-title {
   color: var(--color-primary-light);
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+  letter-spacing: normal;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.carousel-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 456px;
+  width: 344px;
+  padding: 24px;
+  background-image: linear-gradient(
+    180deg,
+    rgba(1, 28, 68, 0) 48.53%,
+    rgba(1, 28, 68, 0.725825) 84.61%,
+    #011c44 101.39%
+  );
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.carousel-card-image {
+  border-radius: 4px 120px 4px 120px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .advantages-icon {
   fill: var(--color-brand);
 }
 
-.carousel-button.prev,
-.carousel-button.next {
-  background: none;
+.carousel-list {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  box-sizing: content-box;
+}
+
+.carousel-slide {
+  flex-shrink: 0;
+  position: relative;
+  display: block;
+}
+
+.carousel-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  fill: var(--color-primary-dark);
+  background-color: var(--color-primary-light);
+  border-radius: 50%;
+  border: 1px solid var(--color-primary-dark);
+  cursor: pointer;
+}
+
+.carousel-button:hover {
+  background-color: var(--color-brand);
+  fill: var(--color-primary-light);
 }
 
 .carousel-button.prev svg {
   fill: var(--color-primary-dark);
 }
 
+.carousel-button.next {
+  transform: rotate(180deg);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 32px;
+}
+
 .pagination-button {
   width: 11px;
   height: 11px;
   background: var(--color-secondary-light);
+  padding: 0;
+  border-radius: 50%;
 }
 
 .pagination-button.active {
-  color: var(--color-brand);
+  background: var(--color-brand);
+}
+
+.contact-section {
+  padding: 48px 0 96px;
+}
+
+.contact-map {
+  max-width: 605px;
+}
+
+.contact-section-wrap {
+  display: flex;
+  gap: 32px;
+  margin-top: 48px;
+  justify-content: center;
 }
 
 .contact-title {
@@ -412,30 +591,42 @@ link:hover {
   font-weight: 700;
   font-size: 64px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: normal;
   text-align: center;
   vertical-align: middle;
+  margin-bottom: 32px;
 }
 
 .contact-form {
   background: var(--color-primary-dark);
+  padding: 48px 56px;
+  margin: 0 auto;
+  max-width: 422px;
+  border-radius: 32px;
+  min-height: 481px;
 }
 
 .form-title {
   color: var(--color-primary-light);
   font-family: Roboto;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 22px;
-  line-height: 100%;
-  letter-spacing: 0%;
+  line-height: 120%;
+  letter-spacing: normal;
   text-align: center;
+  margin-bottom: 32px;
+}
+
+.form-field {
+  margin-bottom: 16px;
 }
 
 .input-control {
   color: var(--color-primary-light);
   background-color: transparent;
   border: 2px solid var(--color-secondary-light);
-  padding: 8px 24px;
+  border-radius: 32px;
+  padding: 16px 24px;
   width: 100%;
   font-family: "Roboto";
   font-size: 13px;
@@ -458,13 +649,17 @@ link:hover {
   color: var(--color-primary-light);
 }
 
+.contact-button {
+  margin-bottom: 8px;
+}
+
 .form-terms {
   color: var(--color-secondary-light);
   font-family: Roboto;
   font-weight: 400;
   font-size: 12px;
   line-height: 18px;
-  letter-spacing: 0%;
+  letter-spacing: normal;
   text-align: center;
 }
 
@@ -480,6 +675,7 @@ footer {
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
+  padding: 56px 0;
 }
 
 footer::after {
@@ -494,9 +690,36 @@ footer::after {
   background-position: bottom right;
 }
 
+.footer-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex-direction: row;
+}
+
+.footer-nav,
+.footer-address {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+  flex-direction: row;
+  flex-basis: 50%;
+  text-align: left;
+}
+
 .footer-logo {
   fill: var(--color-brand);
   width: 84px;
+  height: 42px;
+  flex-grow: 1;
+}
+
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 16px;
 }
 
 .footer-menu .link {
@@ -505,19 +728,41 @@ footer::after {
   font-weight: 400;
   font-size: 16px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: normal;
 }
 
 .footer-menu .link:hover {
   color: var(--color-brand);
 }
 
+.footer-socials {
+  margin-top: 16px;
+}
+
 .footer-socials .socials-icon {
   fill: var(--color-primary-light);
 }
 
+.address-list,
+.address-info {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 16px;
+}
+
+.address-list,
+.address-info {
+  flex-grow: 1;
+}
+
 .address-link {
   color: var(--color-primary-light);
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: normal;
 }
 
 .address-link:hover {
@@ -530,5 +775,5 @@ footer::after {
   font-weight: 400;
   font-size: 13px;
   line-height: 100%;
-  letter-spacing: 0%;
+  letter-spacing: normal;
 }
